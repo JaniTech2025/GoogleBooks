@@ -1,9 +1,20 @@
-import styles from "./Grid/Gris.module.scss";
+import React, { useEffect, useState } from 'react';
+import "./Grid.module.scss";
 
-function Grid(){
-    return(<div>
+function Grid({id, books}) {
 
-    </div>)
+  console.log("Received", {books});
+
+
+  return (
+    <article>
+        <ul>
+        {books.map((book) => (
+          <li key={book.id}>{book.volumeInfo.title}</li>
+        ))}
+      </ul>
+  </article>
+  )
 }
 
-export default Grid
+export default Grid;
