@@ -1,0 +1,56 @@
+.Card {
+    background-color: beige;
+    border: 1px solid navy;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+
+    img {
+        height: 100px;
+        width: 80px;
+        border-radius: 25px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+}
+
+.description {
+    margin-top: 0.75rem;
+
+    p {
+        font-size: 0.9rem;
+        color: #444;
+        margin-bottom: 0.5rem;
+    }
+
+    .see-more-btn {
+        background: none;
+        border: none;
+        color: #0077cc;
+        cursor: pointer;
+        font-size: 0.85rem;
+        padding: 0;
+        text-decoration: underline;
+
+        &:hover {
+            color: #005fa3;
+        }
+    }
+}

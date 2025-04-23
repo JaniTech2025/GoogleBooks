@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import "./Grid.module.scss";
+import styles from "./Grid.module.scss";
+import Card from "../Card/Card";
 
 function Grid({id, books}) {
 
@@ -7,13 +8,18 @@ function Grid({id, books}) {
 
 
   return (
-    <article>
-        <ul>
-        {books.map((book) => (
-          <li key={book.id}>{book.volumeInfo.title}</li>
-        ))}
-      </ul>
-  </article>
+<article className={styles}>
+    {books.map((book) => (
+    <Card
+      key={book.id}
+      id={book.id}
+      title={book.volumeInfo.title}
+      authors={book.volumeInfo.authors}
+      description={book.volumeInfo.description}
+      image={book.volumeInfo.imageLinks?.thumbnail}
+    />
+  ))}
+</article>
   )
 }
 

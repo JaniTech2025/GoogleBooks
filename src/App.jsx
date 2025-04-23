@@ -3,15 +3,13 @@ import "./App.scss";
 import Grid from "./Component/Grid/Grid.jsx";
 import { fetchBooks } from "./Utilities/fetchBooks.jsx";
 
-
 function App() {
-  
-  const [searchTerm, setSearchTerm] = useState("");
+  const [inputValue, setInputValue] = useState(""); // Text typed in the input box
+  const [searchTerm, setSearchTerm] = useState(""); // Actual value used for searching
   const [books, setBooks] = useState([]);
   const [error, setError] = useState(null);
 
   const searchBooks = async () => {
-
     setBooks([]);
     setError(null);
     if (!searchTerm.trim()) return;
@@ -22,23 +20,29 @@ function App() {
 
       const data = await fetchBooks(url);
       setBooks(data.items || []);
-      setError(null);
     } catch (err) {
       setError("Failed to fetch books. Please try again.");
       setBooks([]);
     }
   };
 
+  useEffect(() => {
+    if (searchTerm) {
+      searchBooks();
+    }
+  }, [searchTerm]);
+
   return (
     <div>
       <h3>Search books</h3>
       <input
         type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
         placeholder="Type a book title..."
       />
-      <button onClick={searchBooks}>Search</button>
+      <button onClick={() => setSearchTerm(inputValue)}>Search</button>
+
       {error ? <div>{error}</div> : null}
 
       <Grid id={books.id} books={books} />
