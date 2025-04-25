@@ -1,9 +1,111 @@
 @use "./scss/fonts";
 @use "./scss/palette";
 
+body {
+  // font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.navbar {
+  height: 25px;
+  width: 100%;
+  padding: 30px 20px 20px 40px;
+  background-color: rgb(173, 192, 173);
+  display: flex;
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+
+  .navbar-title {
+    @extend .funnel-display-text;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
+  }
+}
 
 
-h3 {
-  font-family: funnel-display-header;
+.Container {
+  background-image: url('/src/assets/pexels-samson-katt-5255236.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 
+  header {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .error-message {
+    color: rgba(255, 255, 255);
+  }
+
+  .search-bar {
+    position: relative;
+    width: 60%;
+    height: 80px;
+    margin: 0 auto;
+
+    input {
+      @extend .funnel-display-text;
+      font-size: 10%;
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      border: 0.1px solid #ccc;
+      border-radius: 10px;
+      outline: #333;
+      color: rgba(255, 255, 255, 0.7);
+      box-sizing: border-box;
+      background-color: rgba(255, 255, 255, 0.01);
+      padding: 0 60px 0 15px; // make room for button inside
+      position: relative;
+      z-index: 1;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5); // Lighter text color
+        font-style: italic; // Optional: italicize the placeholder
+        font-weight: 300; // Optional: lighter font weight for placeholder text
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 70px;
+      width: 80px;
+      border: 0.1px solid #ccc;
+      border-radius: 7px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      outline: #333;
+      z-index: 2;
+    }
+  }
 }

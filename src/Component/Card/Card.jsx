@@ -1,32 +1,43 @@
 import { useState } from "react";
-import {styles} from "./Card.module.scss";
+import styles from "./Card.module.scss";
+import {modifyDescription}  from "../../Utilities/modifyDescription";
+// import LinesEllipsis from 'react-lines-ellipsis';
+
 
 function Card({ id, title, authors, description, image }) {
 
-    const [showMore, setShowMore] = useState(false);
+    // const [showMore, setShowMore] = useState(false);
+    const {abridgedDescription} = modifyDescription(description);
+
 
     const toggleDescription = () => {
       setShowMore((prev) => !prev);
     };
 
+
     
     return (
-      <div className={styles.Card} id={id}>
-        {image && <img src={image} alt={title} style={{ width: '100%', borderRadius: '8px' }} />}
-        <h3>{title}</h3>
-        <p>{authors?.join(', ')}</p>
-        {description && (
-        <div className="description">
-          <p>
-            {showMore ? description : `${description.slice(0, 100)}...`}
-          </p>
-          <button className="see-more-btn" onClick={toggleDescription}>
-            {showMore ? "See Less" : "See More"}
-          </button>
-        </div>
-      )}
-      </div>
+        <article className={styles.Card}>
+            {/* <div className={styles.imageCard}> */}
+                <img 
+                  src={image} 
+                  alt={title} 
+                  className={styles.image}
+                />
+            {/* </div> */}
+            <div className={styles.Textcontent}>
+            <h3>{title}</h3> 
+            <p>{authors?.join(', ')}</p>
+
+            {abridgedDescription}
+
+
+          </div>
+
+        </article>
+
     );
+
   }
   
   export default Card;
