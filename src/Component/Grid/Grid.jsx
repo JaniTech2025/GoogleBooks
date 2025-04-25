@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 
 function Grid({books}) {
 
-  console.log("Received", {books});
+  // console.log("Received", {books});
 
 
   return (

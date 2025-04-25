@@ -1,0 +1,16 @@
+@use "../../scss/palette";
+@use "../../scss/fonts";
+
+footer {
+    padding: 2px;
+    font-size: 1rem;
+    background-color: rgb(173, 192, 173);
+
+    .text {
+        @extend .funnel-display-text;
+        font-size: 0.9 rem;
+        color: white;
+        margin-left: 100px;
+
+    }
+}

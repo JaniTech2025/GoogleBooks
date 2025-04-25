@@ -1,23 +1,14 @@
 export function modifyDescription(description = "") {
-  const fallback = ' '.repeat(50);
-  if (!description.trim()) {
-    return {
-      previewDescription: fallback,
-    };
+
+  if (!description) {
+    return { description };
   }
 
-  const sentences = description.match(/[^.!?]+[.!?](?=\s|$)/g) || [];
+  const words = description.split(/\s+/);
 
-  let previewDescription = sentences[0] || ''; 
-  const previewWordCount = previewDescription.split(/\s+/).length;
+  const previewWords = words.slice(0, 30).join(' ');
 
-  if (previewWordCount > 50) {
-    previewDescription = previewDescription.split(/\s+/).slice(0, 50).join(' ');
-  }
+  const previewDescription = words.length > 30 ? previewWords + '...' : previewWords;
 
-  const paddedPreview = previewDescription + ' '.repeat(Math.max(0, 50 - previewDescription.length));
-
-  return {
-    previewDescription: paddedPreview,
-  };
+  return { previewDescription };
 }

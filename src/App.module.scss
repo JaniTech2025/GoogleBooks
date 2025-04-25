@@ -21,7 +21,7 @@ body {
   position: relative;
   z-index: 10;
 
-  .navbar-title {
+  .navbarTitle {
     @extend .funnel-display-text;
     font-size: 1.2rem;
     color: white;
@@ -60,11 +60,11 @@ body {
     justify-content: center;
   }
 
-  .error-message {
+  .errorMessage {
     color: rgba(255, 255, 255);
   }
 
-  .search-bar {
+  .searchBar {
     position: relative;
     width: 60%;
     height: 80px;

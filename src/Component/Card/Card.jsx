@@ -7,7 +7,8 @@ import {modifyDescription}  from "../../Utilities/modifyDescription";
 function Card({ id, title, authors, description, image }) {
 
     // const [showMore, setShowMore] = useState(false);
-    const {abridgedDescription} = modifyDescription(description);
+    const { previewDescription } = modifyDescription(description);
+    // console.log(previewDescription);
 
 
     const toggleDescription = () => {
@@ -28,10 +29,7 @@ function Card({ id, title, authors, description, image }) {
             <div className={styles.Textcontent}>
             <h3>{title}</h3> 
             <p>{authors?.join(', ')}</p>
-
-            {abridgedDescription}
-
-
+            <p>{previewDescription}</p>
           </div>
 
         </article>

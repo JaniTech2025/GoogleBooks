@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import  "./App.scss";
+import styles from "./App.module.scss";
 import Grid from "./Component/Grid/Grid.jsx";
 import { fetchBooks } from "./Utilities/fetchBooks.jsx";
 import 'font-awesome/css/font-awesome.min.css';
+import Footer from "./Component/Footer/Footer.jsx";
 
 function App() {
   const inputRef = useRef(null);
@@ -19,7 +20,9 @@ function App() {
     try {
       const encodedSearchTerm = encodeURIComponent(searchTerm);
       const authKey = "AIzaSyDKRzckLSXxY0QZ6zAWpClcuztBBiLqx-k";
-      const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}`;
+      // const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}`;
+      const maxResults = 9; 
+       const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}&maxResults=${maxResults}`;
       //https://www.googleapis.com/books/v1/volumes?q=intitle
 
       const booksData = await fetchBooks(url);
@@ -49,15 +52,16 @@ function App() {
 
   return (
     <>
-    <nav className="navbar">
-      <h1 className="navbar-title">.BookNest.</h1>
+    <nav className={styles.navbar}>
+      <h1 className={styles.navbarTitle}>.BookNest.</h1>
     </nav>
-    <header className="Container">
-    <div className="search-bar">
+    <header className={styles.Container}>
+    <div className={styles.searchBar}>
         <input
-          type="text"
+          type={styles.text}
           ref={inputRef}
           onKeyDown={(e) => {
+            if(error) setError("");
             if (e.key === "Enter") {
               setSearchTerm(e.target.value);
             }
@@ -67,13 +71,14 @@ function App() {
         <button onClick={handleClick}><i className="fa fa-search fa-2x"></i></button>
 
 
-      {error ? <div className="error-message">{error}</div> : null}
+      {error ? <div className={styles.errorMessage}>{error}</div> : null}
       </div>
     </header>
 
     <main>
          <Grid books={books}/>
     </main>
+    <Footer text={"Based on Google Books api. Created by Jani in 2025."}/>
     </>
 
   );
