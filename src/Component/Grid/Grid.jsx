@@ -16,6 +16,11 @@ function Grid({books}) {
           authors={book.volumeInfo.authors}
           description={book.volumeInfo.description}
           image={book.volumeInfo.imageLinks?.thumbnail}
+          publisher={book.volumeInfo.publisher}
+          publisheddate={book.volumeInfo.publisheddate}
+          language={book.volumeInfo.language}
+          totalpages={book.volumeInfo.totalpages}
+          const infoLink={book.volumeInfo.infoLink}
         />
       ))}
     </main>

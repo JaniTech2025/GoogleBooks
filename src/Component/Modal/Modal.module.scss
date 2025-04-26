@@ -1,0 +1,63 @@
+@use "../../scss/fonts";
+@use "../../scss/palette";
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(173, 192, 173, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    // border-radius: 8px;
+    position: relative;
+    margin-top: 12%;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1px;
+    // right: 2px;
+    right: 2px;
+    background: none;
+    border: none;
+    // font-size: 1.5rem;
+
+    .icon {
+        margin-bottom: 2%;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .modalContent {
+        width: 30%;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        // border-radius: 8px;
+        position: relative;
+        margin-top: 12%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalContent {
+        width: 30%;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        // border-radius: 8px;
+        position: relative;
+        margin-top: 12%;
+    }
+}

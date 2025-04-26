@@ -1,3 +1,16 @@
+@use "../../scss/fonts";
+@use "../../scss/palette";
+
+article {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .Card {
     position: relative;
     display: flex;
@@ -6,13 +19,12 @@
     align-items: flex-start;
     height: 300px;
     width: 80%;
+    max-width: 700px;
     background-color: #fff;
-    margin: 10px 10px 10px 10px;
+    margin: 20px auto;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    // padding: 20px;
-    // gap: 30px;
     transition: transform 0.2s ease;
 
 
@@ -46,6 +58,22 @@
         }
 
 
+        .MainimageTitle {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(90%, -150%);
+            color: black;
+
+            padding: 24px 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            text-align: center;
+            max-width: 20%;
+            white-space: normal;
+        }
+
+
     }
 
     .Textcontent {
@@ -67,7 +95,6 @@
         }
 
         @media (max-width: 1024px) {
-            //Mainly: Reduce margin, decrease font size
             align-items: flex-start;
             margin-left: 200px;
             margin-right: 30px;
@@ -92,4 +119,110 @@
 
     }
 
+}
+
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(173, 192, 173, 0.4);
+    color: black;
+
+    height: 20em;
+    width: 30em;
+
+
+    .divider {
+        height: 100%;
+        width: 1px;
+        background-color: black;
+        margin-right: 5%;
+        margin-left: 5%;
+
+    }
+
+    .modalImage {
+        width: 23%;
+        height: 60%;
+        object-fit: cover;
+        background-color: white;
+        border: 2px solid white;
+        padding: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .modalText {
+        font-size: 0.9em;
+        margin-right: 20px;
+        max-width: 50%;
+    }
+
+    .imageTitle {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        transform: translate(-130%, -25%);
+        color: black;
+
+        padding: 24px 12px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        text-align: center;
+        max-width: 20%;
+        white-space: normal;
+    }
+
+    .button {
+        background-color: rgb(173, 192, 173, 0.4);
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    .Container {
+        width: 75%;
+        height: auto;
+        padding: 2em;
+    }
+
+    .Container .modalText {
+        max-width: 100%;
+        font-size: 1em;
+        margin-right: 0;
+        text-align: center;
+        text-wrap: wrap;
+    }
+
+    .img {
+        max-width: 40%;
+        max-height: 30%;
+    }
+
+
+    .Container .divider {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .Container {
+        flex-direction: column;
+        width: 80%;
+        padding: 1em;
+    }
+
+    .img {
+        max-width: 40%;
+        max-height: 30%;
+    }
+
+    .Container .modalText {
+        font-size: 1.1em;
+    }
 }

@@ -4,6 +4,7 @@
     gap: 5px;
     padding: 100px 200px;
     background-color: rgba(173, 192, 173, 0.1);
+    min-height: 500px;
 
     @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
