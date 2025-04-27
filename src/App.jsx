@@ -12,6 +12,9 @@ function App() {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState(null);
 
+  const authKey = import.meta.env.VITE_API_KEY;
+
+
   const searchBooks = async () => {
     setBooks([]);
     setError(null);
@@ -19,7 +22,7 @@ function App() {
 
     try {
       const encodedSearchTerm = encodeURIComponent(searchTerm);
-      const authKey = "AIzaSyDKRzckLSXxY0QZ6zAWpClcuztBBiLqx-k";
+      // const authKey = "AIzaSyDKRzckLSXxY0QZ6zAWpClcuztBBiLqx-k";
       // const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}`;
       const maxResults = 9; 
        const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}&maxResults=${maxResults}`;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Card.module.scss";
 import {modifyDescription}  from "../../Utilities/modifyDescription";
 import Modal from "../Modal/Modal";
+// import REACT_APP_API_KEY from "../"
 // import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 import Defaultimg from '../../assets/Defaultimg.png';
 // import {defaultImage} from "../../assets/imagedefault.jpg";
