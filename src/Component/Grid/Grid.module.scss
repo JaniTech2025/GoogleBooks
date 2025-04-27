@@ -1,9 +1,12 @@
+@use "../../scss/fonts" as fonts;
+@use "../../scss/palette" as palette;
+
 .Container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     padding: 100px 200px;
-    background-color: $lightestgreen;
+    background-color: palette.$lightestgreen;
     min-height: 500px;
 
     @media (max-width: 1024px) {

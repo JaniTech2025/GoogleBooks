@@ -1,6 +1,5 @@
-@use "../../scss/fonts";
-@use "../../scss/palette";
-
+@use "../../scss/fonts" as fonts;
+@use "../../scss/palette" as palette;
 
 .modalOverlay {
     position: fixed;
@@ -8,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $softgreen;
+    background-color: palette.$softgreen;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +15,9 @@
 }
 
 .modalContent {
-    background: $white;
+    background: palette.$white;
     padding: 20px;
-    box-shadow: 0 4px 12px $mediumblack;
+    box-shadow: 0 4px 12px palette.$mediumblack;
     // border-radius: 8px;
     position: relative;
     margin-top: 12%;
@@ -44,7 +43,7 @@
     .modalContent {
         width: 30%;
         padding: 20px;
-        box-shadow: 0 4px 12px $mediumblack;
+        box-shadow: 0 4px 12px palette.$mediumblack;
         // border-radius: 8px;
         position: relative;
         margin-top: 12%;
@@ -55,7 +54,7 @@
     .modalContent {
         width: 30%;
         padding: 20px;
-        box-shadow: 0 4px 12px $mediumblack;
+        box-shadow: 0 4px 12px palette.$mediumblack;
         // border-radius: 8px;
         position: relative;
         margin-top: 12%;

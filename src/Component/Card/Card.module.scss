@@ -1,5 +1,5 @@
-@use "../../scss/fonts";
-@use "../../scss/palette";
+@use "../../scss/fonts" as fonts;
+@use "../../scss/palette" as palette;
 
 article {
     padding: 0;
@@ -20,11 +20,11 @@ article {
     height: 300px;
     width: 80%;
     max-width: 700px;
-    background-color: $white;
+    background-color: palette.$white;
     margin: 20px auto;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px $softblack;
+    box-shadow: 0 4px 8px palette.$softblack;
     transition: transform 0.2s ease;
 
 
@@ -39,10 +39,10 @@ article {
         align-items: center;
         flex-shrink: 0;
         background-color: none;
-        border-color: $brightgreen;
+        border-color: palette.$brightgreen;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 4px 15px $softblack;
+        box-shadow: 0 4px 15px palette.$softblack;
         transition: transform 0.2s ease;
         align-self: center;
         width: 8em;
@@ -52,7 +52,7 @@ article {
 
         &:hover {
             transform: translateY(-53%);
-            box-shadow: 0 8px 20px $mediumblack;
+            box-shadow: 0 8px 20px palette.$mediumblack;
         }
 
     }
@@ -116,8 +116,8 @@ article {
     flex: 1;
     justify-content: center;
     align-content: center;
-    background-color: $softgreen;
-    color: $black;
+    background-color: palette.$softgreen;
+    color: palette.$black;
 
     height: 20em;
     width: 30em;
@@ -126,7 +126,7 @@ article {
     .divider {
         height: 100%;
         width: 1px;
-        background-color: $black;
+        background-color: palette.$black;
         margin-right: 5%;
         margin-left: 5%;
 
@@ -136,10 +136,10 @@ article {
         width: 23%;
         height: 60%;
         object-fit: cover;
-        background-color: $white;
-        border: 2px solid$white;
+        background-color: palette.$white;
+        border: 2px solid palette.$white;
         padding: 5px;
-        box-shadow: 0 4px 12px $mediumblack;
+        box-shadow: 0 4px 12px palette.$mediumblack;
 
 
         @media (max-width: 768px) {
@@ -166,7 +166,7 @@ article {
         top: 40%;
         left: 40%;
         transform: translate(-130%, -25%);
-        color: $black;
+        color: palette.$black;
 
         padding: 24px 12px;
         border-radius: 8px;
@@ -177,10 +177,10 @@ article {
     }
 
     button {
-        border: 0.1px solid $lightgrey;
+        border: 0.1px solid palette.$lightgrey;
         border-radius: 7px;
-        background-color: $brightgreen;
-        outline: $darkgrey;
+        background-color: palette.$brightgreen;
+        outline: palette.$darkgrey;
     }
 
 }
