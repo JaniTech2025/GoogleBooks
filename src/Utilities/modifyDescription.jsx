@@ -6,9 +6,12 @@ export function modifyDescription(description = "") {
 
   const words = description.split(/\s+/);
 
-  const previewWords = words.slice(0, 30).join(' ');
+  const previewWords = words.slice(0, 15).join(' ');
 
-  const previewDescription = words.length > 30 ? previewWords + '...' : previewWords;
+  const previewDescription = words.length > 15 ? previewWords + '...' : previewWords;
+
+  // console.log(description);
+  // const shortDescription = words.slice(0, 3).join(' ');
 
   return { previewDescription };
 }

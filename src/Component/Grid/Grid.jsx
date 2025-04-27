@@ -17,7 +17,7 @@ function Grid({books}) {
           description={book.volumeInfo.description}
           image={book.volumeInfo.imageLinks?.thumbnail}
           publisher={book.volumeInfo.publisher}
-          publisheddate={book.volumeInfo.publisheddate}
+          // publisheddate={book.volumeInfo.publisheddate}
           language={book.volumeInfo.language}
           totalpages={book.volumeInfo.totalpages}
           const infoLink={book.volumeInfo.infoLink}
