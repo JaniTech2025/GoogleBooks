@@ -4,12 +4,12 @@
 footer {
     padding: 2px;
     font-size: 1rem;
-    background-color: rgb(173, 192, 173);
+    background-color: $saturatedgreen;
 
     .text {
         @extend .funnel-display-text;
         font-size: 0.9 rem;
-        color: white;
+        color: $white;
         margin-left: 8%;
     }
 }

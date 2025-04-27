@@ -1,6 +1,15 @@
-:root {
-    --color-1: rgb(198, 57, 104); //text
-    --color-2: rgb(255, 104, 112); //extra
-    --color-3: rgb(252, 238, 221); //page background
-    --color-4: rgb(255, 190, 134); //cards background
-}
+$lightestgreen: rgba(173, 192, 173, 0.1);
+$softgreen: rgba(173, 192, 173, 0.4);
+$mediumgreen: rgba(255, 255, 255, 0.5);
+$brightgreen: rgba(255, 255, 255, 0.7);
+$saturatedgreen: rgb(173, 192, 173);
+
+$lightgrey: #ccc;
+$darkgrey: #333;
+
+$lighterwhite: rgba(255, 255, 255, 0.01);
+$mediumwhite: rgba(255, 255, 255, 0.1);
+$white: rgba(255, 255, 255);
+
+$softblack: rgba(0, 0, 0, 0.1);
+$mediumblack: rgba(0, 0, 0, 0.2);

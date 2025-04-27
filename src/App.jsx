@@ -8,7 +8,7 @@ import Footer from "./Component/Footer/Footer.jsx";
 function App() {
   const inputRef = useRef(null);
 
-  const [searchTerm, setSearchTerm] = useState(""); // Actual value used for searching
+  const [searchTerm, setSearchTerm] = useState(""); 
   const [books, setBooks] = useState([]);
   const [error, setError] = useState(null);
 

@@ -14,7 +14,7 @@ body {
   height: 25px;
   width: 100%;
   padding: 30px 20px 20px 40px;
-  background-color: rgb(173, 192, 173);
+  background-color: $saturatedgreen;
   display: flex;
   position: relative;
   z-index: 10;
@@ -22,7 +22,7 @@ body {
   .navbarTitle {
     @extend .funnel-display-text;
     font-size: 1.2rem;
-    color: white;
+    color: $white;
     margin: 0;
 
     @media (max-width: 768px) {
@@ -61,7 +61,7 @@ body {
   }
 
   .errorMessage {
-    color: rgba(255, 255, 255);
+    color: $white;
   }
 
   .searchBar {
@@ -76,20 +76,20 @@ body {
       width: 100%;
       height: 100%;
       font-size: 1rem;
-      border: 0.1px solid #ccc;
+      border: 0.1px solid $lightgrey;
       border-radius: 10px;
-      outline: #333;
-      color: rgba(255, 255, 255, 0.7);
+      outline: $darkgrey;
+      color: $brightgreen;
       box-sizing: border-box;
-      background-color: rgba(255, 255, 255, 0.01);
-      padding: 0 60px 0 15px; // make room for button inside
+      background-color: $lighterwhite;
+      padding: 0 60px 0 15px;
       position: relative;
       z-index: 1;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.5); // Lighter text color
-        font-style: italic; // Optional: italicize the placeholder
-        font-weight: 300; // Optional: lighter font weight for placeholder text
+        color: $mediumgreen;
+        font-style: italic;
+        font-weight: 300;
       }
     }
 
@@ -100,11 +100,11 @@ body {
       transform: translateY(-50%);
       height: 70px;
       width: 80px;
-      border: 0.1px solid #ccc;
+      border: 0.1px solid $lightgrey;
       border-radius: 7px;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
-      outline: #333;
+      background-color: $mediumwhite;
+      color: $white;
+      outline: $darkgrey;
       z-index: 2;
     }
   }
