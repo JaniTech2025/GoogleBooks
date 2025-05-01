@@ -15,13 +15,13 @@ function App() {
     setBooks([]);
     setError(null);
 
-    if (!searchTerm.trim()) {
-      setError("Enter a title to search");
-      return;
-    }
+    // if (!searchTerm.trim()) {
+    //   setError("Enter a title to search");
+    //   return;
+    // }
 
     const result = await fetchBooks(searchTerm);
-    console.log(result);
+    // console.log(result);
 
     if (result.data !== undefined) {
       setBooks(result.data);
@@ -37,7 +37,7 @@ function App() {
   }, [searchTerm]);
 
   const passSearchTerm = (str) => {
-    if (!str) {
+    if (!str.trim()) {
       setError("Enter a title to search");
       setBooks([]);
       return;
