@@ -1,21 +1,16 @@
 import { useState } from "react";
 import styles from "./Card.module.scss";
-import {modifyDescription}  from "../../Utilities/modifyDescription";
+import {modifyDescription}  from "../../Utilities/modifyDescription.js";
 import Modal from "../Modal/Modal";
-// import REACT_APP_API_KEY from "../"
-// import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 import Defaultimg from '../../assets/Defaultimg.png';
-// import {defaultImage} from "../../assets/imagedefault.jpg";
-//src\Component\Card\Card.jsx
-//src\Component\Modal\Modal.jsx
+
 
 function Card({ title, authors, description, image, publisher, infoLink}) {
 
 
-    // const [showMore, setShowMore] = useState(false);
     const [imageError, setImageError] = useState(false);    
     const { previewDescription } = modifyDescription(description);
-    // console.log(previewDescription);
+
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -30,10 +25,6 @@ function Card({ title, authors, description, image, publisher, infoLink}) {
     const  handleClick = (url) => {     
         if(url) window.open(url, '_blank', 'noopener,noreferrer');
     };
-
-    // console.log({infoLink});
-  
-
 
     
     return (
@@ -53,7 +44,7 @@ function Card({ title, authors, description, image, publisher, infoLink}) {
             <p>{previewDescription}</p>
           </div>
 
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal}>
             <div className={styles.Container}>
                <img src={image || Defaultimg} 
                className={styles.modalImage} 
@@ -65,12 +56,11 @@ function Card({ title, authors, description, image, publisher, infoLink}) {
                <div className={styles.modalText}>
                <h4>{title}</h4> 
                <p>{publisher}</p>
-               {/* <p>{shortDescription}</p> */}
                <p><button onClick={() => handleClick(infoLink)}>More info
                </button></p>
                </div>
             </div>
-         </Modal>
+         </Modal>}
 
         </article>
 

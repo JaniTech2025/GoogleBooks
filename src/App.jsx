@@ -1,42 +1,32 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./App.module.scss";
 import Grid from "./Component/Grid/Grid.jsx";
-import { fetchBooks } from "./Utilities/fetchBooks.jsx";
-import 'font-awesome/css/font-awesome.min.css';
 import Footer from "./Component/Footer/Footer.jsx";
+import Header from "./Component/Header/Header.jsx";
+import { fetchBooks } from "./Utilities/fetchBooks.js";
+import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
-  const inputRef = useRef(null);
-
-  const [searchTerm, setSearchTerm] = useState(""); 
+  const [searchTerm, setSearchTerm] = useState("");
   const [books, setBooks] = useState([]);
   const [error, setError] = useState(null);
-
-  const authKey = import.meta.env.VITE_API_KEY;
-
 
   const searchBooks = async () => {
     setBooks([]);
     setError(null);
-    if (!searchTerm.trim()) return;
 
-    try {
-      const encodedSearchTerm = encodeURIComponent(searchTerm);
-      // const authKey = "AIzaSyDKRzckLSXxY0QZ6zAWpClcuztBBiLqx-k";
-      // const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}`;
-      const maxResults = 9; 
-       const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodedSearchTerm}&key=${authKey}&maxResults=${maxResults}`;
-      //https://www.googleapis.com/books/v1/volumes?q=intitle
+    if (!searchTerm.trim()) {
+      setError("Enter a title to search");
+      return;
+    }
 
-      const booksData = await fetchBooks(url);
-      console.log("Result", booksData);
-      booksData === undefined
-      ? (setBooks([]),
-         setError(`Your search for ${encodedSearchTerm} did not match any title. Try a different title?`))
-      : (setBooks(booksData), setError(null));
-    } catch (err) {
-      setError("Unable to fetch books. Try again.");
-      setBooks([]);
+    const result = await fetchBooks(searchTerm);
+    console.log(result);
+
+    if (result.data !== undefined) {
+      setBooks(result.data);
+    } else {
+      setError(`"${searchTerm} not available". Try another title?`);
     }
   };
 
@@ -46,44 +36,28 @@ function App() {
     }
   }, [searchTerm]);
 
-
-
-  const handleClick = () => {
-    const value = inputRef.current.value;
-    setSearchTerm(value);
+  const passSearchTerm = (str) => {
+    if (!str) {
+      setError("Enter a title to search");
+      setBooks([]);
+      return;
+    }
+    setSearchTerm(str);
   };
 
   return (
     <>
-    <nav className={styles.navbar}>
-      <h1 className={styles.navbarTitle}>.BookNest.</h1>
-    </nav>
-    <header className={styles.Container}>
-    <div className={styles.searchBar}>
-        <input
-          type={styles.text}
-          ref={inputRef}
-          onKeyDown={(e) => {
-            if(error) setError("");
-            if (e.key === "Enter") {
-              setSearchTerm(e.target.value);
-            }
-          }}
-          placeholder="Type a book title and press Enter..."
-        />
-        <button onClick={handleClick}><i className="fa fa-search fa-2x"></i></button>
+      <nav className={styles.navbar}>
+        <h1 className={styles.navbarTitle}>.BookNest.</h1>
+      </nav>
+
+      <Header error={error} onSearch={passSearchTerm} />
+
+      <Grid books={books} />
 
 
-      {error ? <div className={styles.errorMessage}>{error}</div> : null}
-      </div>
-    </header>
-
-    <main>
-         <Grid books={books}/>
-    </main>
-    <Footer text={"Based on Google Books api. Created by Jani in 2025."}/>
+      <Footer text={"Based on Google Books API. Created by Jani in 2025."} />
     </>
-
   );
 }
 

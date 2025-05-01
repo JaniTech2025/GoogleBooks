@@ -36,76 +36,8 @@ body {
 }
 
 
-.Container {
-  background-image: url('/src/assets/pexels-samson-katt-5255236.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  overflow-x: hidden;
 
-
-  header {
-    height: 400px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .errorMessage {
-    color: palette.$white;
-  }
-
-  .searchBar {
-    position: relative;
-    width: 60%;
-    height: 80px;
-    margin: 0 auto;
-
-    input {
-      @extend .funnel-display-text;
-      font-size: 10%;
-      width: 100%;
-      height: 100%;
-      font-size: 1rem;
-      border: 0.1px solid palette.$lightgrey;
-      border-radius: 10px;
-      outline: palette.$darkgrey;
-      color: palette.$brightgreen;
-      box-sizing: border-box;
-      background-color: palette.$lighterwhite;
-      padding: 0 60px 0 15px;
-      position: relative;
-      z-index: 1;
-
-      &::placeholder {
-        color: palette.$mediumgreen;
-        font-style: italic;
-        font-weight: 300;
-      }
-    }
-
-    button {
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 70px;
-      width: 80px;
-      border: 0.1px solid palette.$lightgrey;
-      border-radius: 7px;
-      background-color: palette.$mediumwhite;
-      color: palette.$white;
-      outline: palette.$darkgrey;
-      z-index: 2;
-    }
-  }
+main {
+  min-height: 500px;
+  background-color: palette.$lightestgreen;
 }
