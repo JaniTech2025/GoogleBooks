@@ -1,7 +1,7 @@
 @use "../../scss/fonts" as fonts;
 @use "../../scss/palette" as palette;
 
-.modalOverlay {
+.modaloverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@
     z-index: 1000;
 }
 
-.modalContent {
+.modalcontent {
     background: palette.$white;
     padding: 20px;
     box-shadow: 0 4px 12px palette.$mediumblack;
@@ -23,7 +23,7 @@
     margin-top: 12%;
 }
 
-.closeButton {
+.closebutton {
     position: absolute;
     top: 1px;
     // right: 2px;
@@ -35,12 +35,14 @@
     .icon {
         margin-bottom: 2%;
     }
+
+
 }
 
 
 
 @media (max-width: 768px) {
-    .modalContent {
+    .modal-content {
         width: 30%;
         padding: 20px;
         box-shadow: 0 4px 12px palette.$mediumblack;
@@ -51,7 +53,7 @@
 }
 
 @media (max-width: 480px) {
-    .modalContent {
+    .modal-content {
         width: 30%;
         padding: 20px;
         box-shadow: 0 4px 12px palette.$mediumblack;

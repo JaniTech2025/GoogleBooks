@@ -1,7 +1,7 @@
 @use "../../scss/fonts" as fonts;
 @use "../../scss/palette" as palette;
 
-.Container {
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;

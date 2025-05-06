@@ -11,7 +11,7 @@ article {
 }
 
 
-.Card {
+.card {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -20,7 +20,7 @@ article {
     height: 300px;
     width: 80%;
     max-width: 700px;
-    background-color: palette.$white;
+    background-color: palette.$saturatedgreen;
     margin: 20px auto;
     border-radius: 10px;
     overflow: hidden;
@@ -38,7 +38,7 @@ article {
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
-        background-color: none;
+        background-color: palette.$white;
         border-color: palette.$brightgreen;
         padding: 20px;
         border-radius: 10px;
@@ -60,7 +60,7 @@ article {
 
 
 
-    .Textcontent {
+    .textcontent {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -69,6 +69,9 @@ article {
         margin-left: 210px;
         margin-right: 50px;
         margin-bottom: 20px;
+        max-height: 60%;
+
+
 
 
 
@@ -104,12 +107,13 @@ article {
             margin-left: 20px;
         }
 
+
     }
 
 }
 
 
-.Container {
+.container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -122,6 +126,9 @@ article {
     height: 20em;
     width: 30em;
 
+    align-self: center;
+    justify-self: center;
+
 
     .divider {
         height: 100%;
@@ -132,10 +139,11 @@ article {
 
     }
 
-    .modalImage {
+    .modalimage {
         width: 23%;
         height: 60%;
         object-fit: cover;
+        // justify-self: center;
         background-color: palette.$white;
         border: 2px solid palette.$white;
         padding: 5px;
@@ -145,23 +153,29 @@ article {
         @media (max-width: 768px) {
             width: 6em;
             height: 8em;
-            margin-left: 20%;
+            display: block;
+            margin: 0 auto;
+
         }
 
         @media (max-width: 480px) {
             width: 5em;
             height: 6em;
-            margin-left: 20%;
+            display: block;
+            margin: 0 auto;
+
         }
     }
 
-    .modalText {
+    .modaltext {
         font-size: 0.9em;
-        margin-left: 20px;
+        display: block;
+        margin: 0 auto;
         max-width: 50%;
+
     }
 
-    .imageTitle {
+    .imagetitle {
         position: absolute;
         top: 40%;
         left: 40%;
@@ -176,11 +190,30 @@ article {
         white-space: normal;
     }
 
-    button {
-        border: 0.1px solid palette.$lightgrey;
+
+    .modalbutton {
+        border: none;
         border-radius: 7px;
-        background-color: palette.$brightgreen;
-        outline: palette.$darkgrey;
+        background-color: palette.$saturatedgreen;
+
+        padding: 0.6em 1.2em;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: palette.$saturatedgreen;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px palette.$saturatedgreen;
+        }
+    }
+
+    .text {
+        @extend .funnel-display-text;
+        color: white;
     }
 
 }
@@ -188,23 +221,26 @@ article {
 
 
 @media (max-width: 768px) {
-    .Container {
+    .container {
         width: 75%;
         height: auto;
         padding: 2em;
     }
 
-    .Container .modalText {
+    .container .modaltext {
         max-width: 100%;
         font-size: 1em;
         margin-right: 0;
         text-align: center;
+        justify-self: center;
         text-wrap: wrap;
     }
 
     .img {
         max-width: 40%;
         max-height: 30%;
+        justify-self: center;
+
     }
 
 
@@ -214,7 +250,7 @@ article {
 }
 
 @media (max-width: 480px) {
-    .Container {
+    .container {
         flex-direction: column;
         width: 80%;
         padding: 1em;
@@ -225,7 +261,7 @@ article {
         max-height: 30%;
     }
 
-    .Container .modalText {
+    .container .modaltext {
         font-size: 1.1em;
     }
 }

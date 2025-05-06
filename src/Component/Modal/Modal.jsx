@@ -6,10 +6,10 @@ function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+    <div className={styles.modaloverlay} onClick={onClose}>
+      <div className={styles.modalcontent} onClick={(e) => e.stopPropagation()}>
         {children}
-        <button className={styles.closeButton} onClick={onClose}><FontAwesomeIcon icon={faTimes} size="sm"/></button>
+        <button className={styles.closebutton} onClick={onClose}><FontAwesomeIcon icon={faTimes} size="sm"/></button>
       </div>
     </div>
   );

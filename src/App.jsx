@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./App.module.scss";
-import Grid from "./Component/Grid/Grid.jsx";
-import Footer from "./Component/Footer/Footer.jsx";
-import Header from "./Component/Header/Header.jsx";
-import { fetchBooks } from "./Utilities/fetchBooks.js";
+import Grid from "./component/Grid/Grid.jsx";
+import Footer from "./component/Footer/Footer.jsx";
+import Header from "./component/Header/Header.jsx";
+import { fetchBooks } from "./utilities/fetchBooks.js";
 import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <nav className={styles.navbar}>
-        <h1 className={styles.navbarTitle}>.BookNest.</h1>
+        <h1 className={styles.navbartitle}>.BookNest.</h1>
       </nav>
 
       <Header error={error} onSearch={passSearchTerm} />

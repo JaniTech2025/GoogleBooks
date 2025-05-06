@@ -1,7 +1,7 @@
 @use "../../scss/fonts";
 @use "../../scss/palette" as palette;
 
-.Container {
+.container {
     background-image: url('/src/assets/pexels-samson-katt-5255236.jpg');
     background-size: cover;
     background-position: center;
@@ -26,16 +26,16 @@
         justify-content: center;
     }
 
-    .errorMessage {
+    .errormessage {
         color: palette.$white;
         font-family: funnel-display-text;
-        background-color: palette.$mediumblack;
+        background-color: palette.$black;
         display: inline-block;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
     }
 
-    .searchBar {
+    .searchbar {
         position: relative;
         width: 60%;
         height: 80px;
@@ -50,9 +50,11 @@
             border: 0.1px solid palette.$lightgrey;
             border-radius: 10px;
             outline: palette.$darkgrey;
-            color: palette.$brightgreen;
+            // color: palette.$brightgreen;
+            color: palette.$white;
             box-sizing: border-box;
-            background-color: palette.$lighterwhite;
+            // background-color: palette.$lighterwhite;
+            background-color: palette.$black;
             padding: 0 60px 0 15px;
             position: relative;
             z-index: 1;

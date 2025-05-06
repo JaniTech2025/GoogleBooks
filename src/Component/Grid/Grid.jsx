@@ -8,7 +8,7 @@ function Grid({books}) {
 
 
   return (
-    <main className={styles.Container}>
+    <main className={styles.container}>
         {books.map((book) => (
         <Card
           key={book.id}

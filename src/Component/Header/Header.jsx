@@ -10,8 +10,8 @@ function Header({ error, onSearch }) {
   };
 
   return (
-    <header className={styles.Container}>
-      <div className={styles.searchBar}>
+    <header className={styles.container}>
+      <div className={styles.searchbar}>
         <input
           type="text"
           ref={inputRef}
@@ -26,7 +26,7 @@ function Header({ error, onSearch }) {
         <button onClick={handleClick}>
           <i className="fa fa-search fa-2x"></i>
         </button>
-        {error && <div className={styles.errorMessage}>{error}</div>}
+        {error && <div className={styles.error-message}>{error}</div>}
       </div>
     </header>
   );
