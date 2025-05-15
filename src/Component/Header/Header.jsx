@@ -26,7 +26,7 @@ function Header({ error, onSearch }) {
         <button onClick={handleClick}>
           <i className="fa fa-search fa-2x"></i>
         </button>
-        {error && <div className={styles.error-message}>{error}</div>}
+        {error && <div className={styles.errormessage}>{error}</div>}
       </div>
     </header>
   );

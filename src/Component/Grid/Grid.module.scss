@@ -23,3 +23,157 @@
         padding: 40px 20px;
     }
 }
+
+.modalcontainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    background-color: palette.$softgreen;
+    color: palette.$black;
+
+    height: 20em;
+    width: 30em;
+
+    align-self: center;
+    justify-self: center;
+
+
+    .divider {
+        height: 100%;
+        width: 1px;
+        background-color: palette.$black;
+        margin-right: 5%;
+        margin-left: 5%;
+
+    }
+
+    .modalimage {
+        width: 23%;
+        height: 60%;
+        object-fit: cover;
+        // justify-self: center;
+        background-color: palette.$white;
+        border: 2px solid palette.$white;
+        padding: 5px;
+        box-shadow: 0 4px 12px palette.$mediumblack;
+
+
+        @media (max-width: 768px) {
+            width: 6em;
+            height: 8em;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        @media (max-width: 480px) {
+            width: 5em;
+            height: 6em;
+            display: block;
+            margin: 0 auto;
+
+        }
+    }
+
+    .modaltext {
+        font-size: 0.9em;
+        display: block;
+        margin: 0 auto;
+        max-width: 50%;
+
+    }
+
+    .imagetitle {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        transform: translate(-130%, -25%);
+        color: palette.$black;
+
+        padding: 24px 12px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        text-align: center;
+        max-width: 20%;
+        white-space: normal;
+    }
+
+
+    .modalbutton {
+        border: none;
+        border-radius: 7px;
+        background-color: palette.$saturatedgreen;
+        color: palette.$black;
+
+        padding: 0.6em 1.2em;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: palette.$saturatedgreen;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px palette.$saturatedgreen;
+        }
+    }
+
+    .text {
+        @extend .funnel-display-text;
+        color: white;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    .modalcontainer {
+        width: 75%;
+        height: auto;
+        padding: 2em;
+    }
+
+    .modalcontainer .modaltext {
+        max-width: 100%;
+        font-size: 1em;
+        margin-right: 0;
+        text-align: center;
+        justify-self: center;
+        text-wrap: wrap;
+    }
+
+    .img {
+        max-width: 40%;
+        max-height: 30%;
+        justify-self: center;
+
+    }
+
+
+    .modalcontainer .divider {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalcontainer {
+        flex-direction: column;
+        width: 80%;
+        padding: 1em;
+    }
+
+    .img {
+        max-width: 40%;
+        max-height: 30%;
+    }
+
+    .modalcontainer .modaltext {
+        font-size: 1.1em;
+    }
+}

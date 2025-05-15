@@ -20,13 +20,13 @@ function App() {
     //   return;
     // }
 
-    const result = await fetchBooks(searchTerm);
-    // console.log(result);
-
-    if (result.data !== undefined) {
+    // const result = await fetchBooks(searchTerm);
+    try {
+      const result = await fetchBooks(searchTerm);
       setBooks(result.data);
-    } else {
-      setError(`"${searchTerm} not available". Try another title?`);
+    } catch (err) {
+       setError(`"${searchTerm} not available". Try another title?`);
+       setBooks([]);
     }
   };
 

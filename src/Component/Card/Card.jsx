@@ -1,30 +1,30 @@
 import { useState } from "react";
 import styles from "./Card.module.scss";
 import {modifyDescription}  from "../../utilities/modifyDescription.js";
-import Modal from "../Modal/Modal";
+// import Modal from "../Modal/Modal";
 import Defaultimg from '../../assets/Defaultimg.png';
 
 
-function Card({ title, authors, description, image, publisher, infoLink}) {
+function Card({ title, authors, description, image, onClick}) {
 
 
-    const [imageError, setImageError] = useState(false);    
+    // const [imageError, setImageError] = useState(false);    
     const { previewDescription } = modifyDescription(description);
 
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    // const openModal = () => setIsModalOpen(true);
+    // const closeModal = () => setIsModalOpen(false);
 
 
     const toggleDescription = () => {
       setShowMore((prev) => !prev);
     };
 
-    const  handleClick = (url) => {     
-        if(url) window.open(url, '_blank', 'noopener,noreferrer');
-    };
+    // const  handleClick = (url) => {     
+    //     if(url) window.open(url, '_blank', 'noopener,noreferrer');
+    // };
 
     
     return (
@@ -32,7 +32,7 @@ function Card({ title, authors, description, image, publisher, infoLink}) {
                 <img 
                   src={image || Defaultimg} 
                   className={styles.image}
-                  onClick={openModal}
+                  onClick={onClick}
                   onError={(e) => {
                     e.target.onerror = null; 
                   }}
@@ -44,7 +44,7 @@ function Card({ title, authors, description, image, publisher, infoLink}) {
             <p>{previewDescription}</p>
           </div>
 
-          {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {/* {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal}>
             <div className={styles.container}>
                <img src={image || Defaultimg} 
                className={styles.modalimage} 
@@ -60,7 +60,7 @@ function Card({ title, authors, description, image, publisher, infoLink}) {
                </button></p>
                </div>
             </div>
-         </Modal>}
+         </Modal>} */}
 
         </article>
 
