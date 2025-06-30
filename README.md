@@ -16,19 +16,19 @@ A simple React app built with **Vite** that allows users to search for books by 
 
 ---
 
-## UI Overviescreenshots
+## UI screenshots
 
 # Home page
 
-![Homepage screenshot] (screenshot1.png)
+![Homepage screenshot](screenshot1.png)
 
 # Search results
 
-![Search results screenshot] (screenshot3.png)
+![Search results screenshot](screenshot3.png)
 
 # Search term validation
 
-![Search term Validation screenshot] (screenshot4.png)
+![Search term Validation screenshot](screenshot4.png)
 
 ---
 
