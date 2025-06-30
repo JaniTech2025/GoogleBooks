@@ -1,4 +1,4 @@
-# BookFinder – Google Books Search App
+# BookNest – Google Books Search App
 
 A simple React app built with **Vite** that allows users to search for books by title using the [Google Books API](https://developers.google.com/books). It features input validation, responsive UI, and detailed book modals. In the UI design, the font, style and colours have been chosen to be mild, calming and have a book reading corner effect.
 
@@ -7,11 +7,11 @@ A simple React app built with **Vite** that allows users to search for books by 
 ## Tech Stack
 
 <p>
-  <kbd style="background:#f3f3f3; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">Vite</kbd>
-  <kbd style="background:#f3f3f3; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">React (JavaScript)</kbd>
-  <kbd style="background:#f3f3f3; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">React Hooks</kbd>
-  <kbd style="background:#f3f3f3; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">CSS</kbd>
-  <kbd style="background:#f3f3f3; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">Google Books API</kbd>
+  <kbd style="background:#ffd6d6; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">Vite</kbd>
+  <kbd style="background:#d6f0ff; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">React (JavaScript)</kbd>
+  <kbd style="background:#d6ffe2; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">React Hooks</kbd>
+  <kbd style="background:#fff0c2; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">CSS</kbd>
+  <kbd style="background:#e6d6ff; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">Google Books API</kbd>
 </p>
 
 ---
@@ -45,8 +45,12 @@ A simple React app built with **Vite** that allows users to search for books by 
 
 # Shortens a long description to a 15-word preview.
 
+/\*\*
+
+- Truncates a description to a preview of the first 15 words.
+-
 - @param {string} description - The full text description (can be empty).
-- @returns {Object} An object containing either the original description or a truncated preview.
+- @returns {Object} An object containing either the original or a truncated preview description.
   \*/
   export function modifyDescription(description = "") {
   // If no description is provided, return it as-is
@@ -79,13 +83,13 @@ return { previewDescription };
 ## UI Overviescreenshots
 
 - Home page
-  (screenshot1.png)
+  (./screenshot1.png)
 
 - Search results
-  (screenshot3.png)
+  (./screenshot3.png)
 
 - Search term validation
-  (screenshot4.png)
+  (./screenshot4.png)
 
 ---
 
