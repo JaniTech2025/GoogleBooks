@@ -1,4 +1,4 @@
-# BookNest – Google Books Search App
+# BookNest – Google Books API based Search App
 
 A simple React app built with **Vite** that allows users to search for books by title using the [Google Books API](https://developers.google.com/books). It features input validation, responsive UI, and detailed book modals. In the UI design, the font, style and colours have been chosen to be mild, calming and have a book reading corner effect.
 
@@ -6,13 +6,11 @@ A simple React app built with **Vite** that allows users to search for books by 
 
 ## Tech Stack
 
-<p>
-  <kbd style="background:#ffd6d6; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">Vite</kbd>
-  <kbd style="background:#d6f0ff; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">React (JavaScript)</kbd>
-  <kbd style="background:#d6ffe2; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">React Hooks</kbd>
-  <kbd style="background:#fff0c2; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">CSS</kbd>
-  <kbd style="background:#e6d6ff; padding:6px 12px; margin:4px; border-radius:6px; display:inline-block;">Google Books API</kbd>
-</p>
+[![Vite](https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=ffffff)](https://vitejs.dev/)  
+[![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61dafb)](https://reactjs.org/)  
+[![React Hooks](https://img.shields.io/badge/React_Hooks-61dafb?style=for-the-badge&logo=react&logoColor=000)](https://reactjs.org/docs/hooks-intro.html)  
+[![CSS](https://img.shields.io/badge/CSS-264de4?style=for-the-badge&logo=css3&logoColor=ffffff)](https://developer.mozilla.org/en-US/docs/Web/CSS)  
+[![Google Books API](https://img.shields.io/badge/Google_Books_API-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/books)
 
 ---
 
