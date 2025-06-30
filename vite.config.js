@@ -2,10 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  base: "/GoogleBooks/",
   plugins: [react()],
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: "./setup.js", // make sure this path is correct
+    setupFiles: "./setup.js",
   },
 });
