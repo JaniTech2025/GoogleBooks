@@ -16,6 +16,22 @@ A simple React app built with **Vite** that allows users to search for books by 
 
 ---
 
+## UI Overviescreenshots
+
+# Home page
+
+![Homepage screenshot] (screenshot1.png)
+
+# Search results
+
+![Search results screenshot] (screenshot3.png)
+
+# Search term validation
+
+![Search term Validation screenshot] (screenshot4.png)
+
+---
+
 ## Features
 
 - Search by title using Google Books API
@@ -71,25 +87,14 @@ words.length > 15 ? previewWords + "..." : previewWords;
 return { previewDescription };
 }
 
+---
+
 ## Tech Stack
 
 - Vite + React (JavaScript)
 - React Hooks: `useState`, `useEffect`
 - CSS (or Tailwind if used)
 - Google Books API
-
----
-
-## UI Overviescreenshots
-
-- Home page
-  (./screenshot1.png)
-
-- Search results
-  (./screenshot3.png)
-
-- Search term validation
-  (./screenshot4.png)
 
 ---
 
