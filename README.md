@@ -107,8 +107,8 @@ return { previewDescription };
 
 ## Install instructions
 
-git clone https://git@github.com:JaniTech2025/GoogleBooks.git
-cd GoogleBooks
-set up environment variable for VITE_API_KEY in .env file
-npm install
-npm run dev
+- git clone https://git@github.com:JaniTech2025/GoogleBooks.git
+- cd GoogleBooks
+- set up environment variable for VITE_API_KEY in .env file
+- npm install
+- npm run dev
