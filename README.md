@@ -64,7 +64,6 @@ A simple React app built with **Vite** that allows users to search for books by 
 /\*\*
 
 - Truncates a description to a preview of the first 15 words.
--
 - @param {string} description - The full text description (can be empty).
 - @returns {Object} An object containing either the original or a truncated preview description.
   \*/
@@ -81,8 +80,7 @@ const words = description.split(/\s+/);
 const previewWords = words.slice(0, 15).join(" ");
 
 // Add ellipsis if original description was longer than 15 words
-const previewDescription =
-words.length > 15 ? previewWords + "..." : previewWords;
+const previewDescription = words.length > 15 ? previewWords + "..." : previewWords;
 
 return { previewDescription };
 }
