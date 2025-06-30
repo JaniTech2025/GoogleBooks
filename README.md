@@ -42,7 +42,7 @@ A simple React app built with **Vite** that allows users to search for books by 
   - Title
   - Snippet of description
 - Modal view with:
-  - Enlarged cover
+  - Book cover
   - Full title
   - Publisher info
   - Link to Google Books for more details
